@@ -2,9 +2,12 @@
   "name": "vue-window-portal",
   "version": "1.0.0",
   "description": "Vue component to render content in a new window",
-  "main": "index.js",
+  "main": "dist/vue-window-portal.common.js",
+  "module": "dist/vue-window-portal.esm.js",
+  "sideEffects": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target=lib"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,13 @@
     "url": "https://github.com/Shamus03/vue-window-portal/issues"
   },
   "homepage": "https://github.com/Shamus03/vue-window-portal#readme",
-  "dependencies": {
-    "vue": "^2.6.10"
+  "dependencies": {},
+  "peerDependencies": {
+    "vue": "^2.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.0.5",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   }
 }

@@ -1,6 +1,12 @@
-import Vue from 'vue'
+<template>
+  <div v-if="open">
+    <slot />
+  </div>
+</template>
 
-export default Vue.extend({
+<script>
+export default {
+  name: 'VueWindowPortal',
   props: {
     open: {
       type: Boolean,
@@ -26,9 +32,6 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     }
-  },
-  render(h) {
-    return this.open ? h('div', this.$slots.default) : null
   },
   data() {
     return {
@@ -83,4 +86,5 @@ export default Vue.extend({
     this.closePortal();
     window.removeEventListener('beforeunload', this.closePortal);
   }
-})
+}
+</script>

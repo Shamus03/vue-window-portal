@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <vue-window-portal
+    <VueWindowPortal
       class="wrapper"
       :open.sync="open"
       :left="600"
@@ -21,9 +21,9 @@
       <h3>I'm a new window!</h3>
 
       Text: <input v-model="text">
-    </vue-window-portal>
+    </VueWindowPortal>
 
-    <vue-window-portal
+    <VueWindowPortal
       class="wrapper"
       :open.sync="open"
       :left="600"
@@ -33,13 +33,13 @@
       <h3>I'm a new window, but I have no style!</h3>
 
       Text: <input v-model="text">
-    </vue-window-portal>
+    </VueWindowPortal>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import VueWindowPortal from '.'
+import VueWindowPortal from './components/VueWindowPortal'
 
 export default Vue.extend({
   components: {

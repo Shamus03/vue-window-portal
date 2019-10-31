@@ -11,11 +11,11 @@ This works by creating the element in the main window and adding it to the newly
 
 # Demo
 ```bash
-vue serve Example.vue
+npm run serve
 ```
 
 # Example usage
-See [Example.vue]() for a more detailed example.
+See [App.vue](./src/App.vue) for a more detailed example.
 
 ```vue
 <template>
