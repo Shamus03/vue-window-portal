@@ -7,16 +7,10 @@ jobs:
     release:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
-              uses: actions/checkout@v1
-            - name: Install dependencies
-              uses: actions/npm@master
-              with:
-                args: install
-            - name: Build
-              uses: actions/npm@master
-              with:
-                args: run build
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+            - run: npm install
+            - run: npm build
             - name: Make stable release to npm
               uses: epeli/npm-release@v1
               with:
