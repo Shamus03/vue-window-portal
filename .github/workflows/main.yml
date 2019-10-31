@@ -1,18 +1,16 @@
 on:
-    push:
-        branches:
-            - master
-
+  push:
+    branches:
+      - master
+name: NPM Publish
 jobs:
-    release:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - uses: actions/setup-node@v1
-            - run: npm install
-            - run: npm build
-            - name: Make stable release to npm
-              uses: epeli/npm-release@v1
-              with:
-                  type: stable
-                  token: ${{ secrets.NPM_AUTH_TOKEN }}
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
