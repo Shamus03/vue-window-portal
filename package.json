@@ -9,6 +9,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target=lib"
   },
+  "publishConfig": { "registry": "https://npmjs.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shamus03/vue-window-portal.git"

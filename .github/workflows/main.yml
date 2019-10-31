@@ -11,6 +11,8 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install
       - run: npm build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Make stable release to npm
+        uses: epeli/npm-release@v1
+        with:
+          type: stable
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
