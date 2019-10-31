@@ -11,4 +11,4 @@ jobs:
               uses: epeli/npm-release@v1
               with:
                   type: stable
-                  token: ${{ secrets.NPM_TOKEN }}
+                  token: ${{ secrets.NPM_AUTH_TOKEN }}
