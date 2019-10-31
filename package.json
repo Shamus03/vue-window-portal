@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Vue component to render content in a new window",
   "sideEffects": false,
+  "main": "dist/vue-windVow-portal.common.js",
+  "module": "dist/vue-winddow-portal.esm.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target=lib"
