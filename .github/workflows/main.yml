@@ -15,7 +15,7 @@ jobs:
             - name: Build
               uses: actions/npm@master
               with:
-                args: build
+                args: run build
             - name: Make stable release to npm
               uses: epeli/npm-release@v1
               with:

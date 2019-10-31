@@ -1,6 +1,6 @@
 {
   "name": "vue-window-portal",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Vue component to render content in a new window",
   "sideEffects": false,
   "main": "dist/vue-windVow-portal.common.js",
