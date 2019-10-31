@@ -3,10 +3,19 @@ on:
         types: [published]
 
 jobs:
-    prerelease:
+    release:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - name: Checkout
+              uses: actions/checkout@v1
+            - name: Install dependencies
+              uses: actions/npm@master
+              with:
+                args: install
+            - name: Build
+              uses: actions/npm@master
+              with:
+                args: build
             - name: Make stable release to npm
               uses: epeli/npm-release@v1
               with:
