@@ -1,0 +1,28 @@
+{
+  "name": "vue-window-portal",
+  "version": "1.0.0",
+  "description": "Vue component to render content in a new window",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shamus03/vue-window-portal.git"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "portal",
+    "window"
+  ],
+  "author": "Shamus Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shamus03/vue-window-portal/issues"
+  },
+  "homepage": "https://github.com/Shamus03/vue-window-portal#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
