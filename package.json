@@ -2,8 +2,6 @@
   "name": "vue-window-portal",
   "version": "1.0.0",
   "description": "Vue component to render content in a new window",
-  "main": "dist/vue-window-portal.common.js",
-  "module": "dist/vue-window-portal.esm.js",
   "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve",
