@@ -5,7 +5,6 @@
   "version": "0.0.0-development",
   "description": "Vue component to render content in a new window",
   "main": "dist/vue-window-portal.common.js",
-  "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
