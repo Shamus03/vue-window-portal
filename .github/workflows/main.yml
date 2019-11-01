@@ -23,12 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2.5.0
         env:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages
-          FOLDER: dist
-          BUILD_SCRIPT: npm ci && npm run build
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./dist
 
