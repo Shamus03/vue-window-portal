@@ -1,12 +1,36 @@
 {
   "name": "vue-window-portal",
-  "version": "0.1.0",
-  "private": true,
+  "author": "Shamus Taylor",
+  "license": "MIT",
+  "version": "0.0.0-development",
+  "description": "Vue component to render content in a new window",
+  "main": "dist/vue-window-portal.common.js",
+  "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:bundle": "vue-cli-service build --target lib src/index.js",
+    "lint": "vue-cli-service lint",
+    "semantic-release": "semantic-release"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shamus03/vue-window-portal.git"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "portal",
+    "window"
+  ],
+  "bugs": {
+    "url": "https://github.com/Shamus03/vue-window-portal/issues"
+  },
+  "homepage": "https://github.com/Shamus03/vue-window-portal#readme",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "dependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10"
@@ -20,7 +44,8 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^9.4.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "semantic-release": "^15.13.28"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

@@ -1,0 +1,14 @@
+name: Github Pages
+on:
+  release:
+    types: [published]
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - run: npm ci
+      - run: npm run build
+      - run: echo TODO DEPLOY TO GITHUB PAGES
