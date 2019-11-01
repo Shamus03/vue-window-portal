@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Release
+name: Semantic Release
 jobs:
   release:
     name: Release
@@ -11,8 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: npm ci
-      - run: npm run build:bundle
+      - name: Build
+        run: |
+          npm ci
+          npm run build:bundle
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,6 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Build
+        run: |
+          npm ci
+          npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
