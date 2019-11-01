@@ -8,6 +8,7 @@ This works by creating the element in the main window and adding it to the newly
 ### Known limitations
 
 - Hot-reloading during development will cause the windows to close/open.
+- Styles **will not work** if your page sets Content Security Policy `style-src 'unsafe-inline'`. Unfortunately this includes Github Pages.
 - Styles cannot hot-reload because they are copied when the window is initially opened.
 - Style/link tags not in `document.head` will not be copied to the new window (semi-intentional).
 
