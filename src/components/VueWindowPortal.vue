@@ -77,6 +77,8 @@ export default {
         // Clear any existing content
         this.windowRef.document.body.innerHTML = ''
 
+        this.windowRef.document.title = document.title
+
         // Move the component into the window
         const app = document.createElement('div')
         app.id = 'app'
