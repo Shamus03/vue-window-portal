@@ -7,7 +7,7 @@ This works by creating the element in the main window and adding it to the newly
 
 - Hot-reloading during development will cause the windows to close/open.
 - Styles cannot hot-reload because they are copied when the window is initially opened.
-- Style tags not in `document.head` will not be copied to the new window (semi-intentional).
+- Style/link tags not in `document.head` will not be copied to the new window (semi-intentional).
 
 # Demo
 
