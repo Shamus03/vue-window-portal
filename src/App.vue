@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div id="app">
     <div class="wrapper">
       <h3>vue-window-portal demo</h3>
+
+      You may need to check for blocked popups!
 
       <p>
         Text: <input v-model="text">
@@ -51,7 +53,7 @@ export default Vue.extend({
   data () {
     return {
       text: 'magic!',
-      open: true,
+      open: false,
     }
   },
 })
