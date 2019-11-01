@@ -66,7 +66,7 @@ export default {
 
       // Clone style nodes
       if (!this.noStyle) {
-        for (const el of document.head.querySelectorAll('style')) {
+        for (const el of document.head.querySelectorAll('style, link[rel=stylesheet]')) {
           this.windowRef.document.head.appendChild(el.cloneNode(true))
         }
       }
