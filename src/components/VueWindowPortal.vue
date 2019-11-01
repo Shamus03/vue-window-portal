@@ -1,5 +1,8 @@
 <template>
-  <div v-if="open">
+  <div
+    v-if="open"
+    v-show="windowLoaded"
+  >
     <slot />
   </div>
 </template>
@@ -35,6 +38,7 @@ export default {
   data () {
     return {
       windowRef: null,
+      windowLoaded: false,
     }
   },
   watch: {
@@ -61,26 +65,38 @@ export default {
       if (this.windowRef) return
 
       const { width, height, left, top } = this
-      this.windowRef = window.open('', '', `width=${width},height=${height},left=${left},top=${top}`)
+
+      // Open a nonexistent page to replace the content later
+      const windowPath = window.location.origin + window.location.pathname + '_window'
+      this.windowRef = window.open(windowPath, '', `width=${width},height=${height},left=${left},top=${top}`)
       this.windowRef.addEventListener('beforeunload', this.closePortal)
 
-      // Clone style nodes
-      if (!this.noStyle) {
-        for (const el of document.head.querySelectorAll('style, link[rel=stylesheet]')) {
-          this.windowRef.document.head.appendChild(el.cloneNode(true))
-        }
-      }
+      this.windowRef.addEventListener('load', () => {
+        this.windowLoaded = true
 
-      // Move the component into the window
-      const app = document.createElement('div')
-      app.id = 'app'
-      app.appendChild(this.$el)
-      this.windowRef.document.body.appendChild(app)
-      this.$emit('update:open', true)
+        // Clear any existing content
+        this.windowRef.document.body.innerHTML = ''
+
+        // Move the component into the window
+        const app = document.createElement('div')
+        app.id = 'app'
+        app.appendChild(this.$el)
+        this.windowRef.document.body.appendChild(app)
+        this.$emit('update:open', true)
+
+        // Clone style nodes
+        if (!this.noStyle) {
+          for (const el of document.head.querySelectorAll('style, link[rel=stylesheet]')) {
+            const clone = el.cloneNode(true)
+            this.windowRef.document.head.appendChild(clone)
+          }
+        }
+      })
     },
     closePortal () {
       if (!this.windowRef) return
 
+      this.windowLoaded = false
       this.windowRef.close()
       this.windowRef = null
       this.$emit('update:open', false)
