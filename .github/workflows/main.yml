@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Semantic Release
+name: master
 jobs:
   release:
     name: Release
