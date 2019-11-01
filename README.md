@@ -11,7 +11,7 @@ This works by creating the element in the main window and adding it to the newly
 
 # Demo
 
-TODO: Live demo on github pages
+[Live demo](https://shamus03.github.io/vue-window-portal/)
 
 Or run locally:
 ```bash
