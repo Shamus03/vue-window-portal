@@ -85,6 +85,7 @@ export default {
         app.appendChild(this.$el)
         this.windowRef.document.body.appendChild(app)
         this.$emit('update:open', true)
+        this.$emit('opened', this.windowRef)
 
         // Clone style nodes
         if (!this.noStyle) {
