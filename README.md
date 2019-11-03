@@ -1,7 +1,9 @@
 # vue-window-portal
+[![npm version](http://img.shields.io/npm/v/vue-window-portal.svg?style=flat&logo=npm)](https://npmjs.org/package/vue-window-portal "View this project on npm")
+[![build status](https://github.com/shamus03/vue-window-portal/workflows/master/badge.svg)](https://github.com/Shamus03/vue-window-portal "View this project on Github")
+
 Vue component to render content in a new window.
 
-![](https://github.com/shamus03/vue-window-portal/workflows/master/badge.svg)
 
 This works by creating the element in the main window and adding it to the newly created child window, which removes it from the main window. The original window handles all processing and logic of the now-moved component, so no script tags need to be copied over, just styles.
 
