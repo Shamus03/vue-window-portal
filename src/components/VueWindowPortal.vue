@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="open || inline"
-    v-show="windowLoaded"
+    v-show="windowLoaded || inline"
   >
     <slot />
   </div>
