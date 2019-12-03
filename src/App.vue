@@ -48,7 +48,7 @@
       :top="400"
     >
       <h3>This content gets rendered inline whenever the window isn't open!</h3>
-      
+
       <button @click="open2 = true">
         Pop out
       </button>
