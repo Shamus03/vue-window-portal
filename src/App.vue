@@ -39,20 +39,6 @@
 
       Text: <input v-model="text">
     </VueWindowPortal>
-
-    <VueWindowPortal
-      class="wrapper"
-      :open.sync="open2"
-      inline
-      :left="800"
-      :top="400"
-    >
-      <h3>This content gets rendered inline whenever the window isn't open!</h3>
-
-      <button @click="open2 = true">
-        Pop out
-      </button>
-    </VueWindowPortal>
   </div>
 </template>
 
@@ -68,7 +54,6 @@ export default Vue.extend({
     return {
       text: 'magic!',
       open: false,
-      open2: false,
     }
   },
 })

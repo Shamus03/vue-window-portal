@@ -1,7 +1,7 @@
 <template>
   <div
-    v-if="open || inline"
-    v-show="windowLoaded || inline"
+    v-if="open"
+    v-show="windowLoaded"
   >
     <slot />
   </div>
@@ -11,10 +11,6 @@
 export default {
   props: {
     open: {
-      type: Boolean,
-      default: false,
-    },
-    inline: {
       type: Boolean,
       default: false,
     },
